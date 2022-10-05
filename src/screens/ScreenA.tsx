@@ -10,7 +10,11 @@ export function ScreenA() {
 
       <Button
         title="Go to Screen B"
-        onPress={() => navigation.navigate('ScreenB')}
+        onPress={() =>
+          navigation.navigate('ScreenB', {
+            name: 'Param content from ScreenA',
+          })
+        }
       />
     </View>
   );

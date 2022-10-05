@@ -1,12 +1,18 @@
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Button, StyleSheet, Text, View } from 'react-native';
+
+type ParamsProps = {
+  name: string;
+};
 
 export function ScreenB() {
   const navigation = useNavigation();
+  const route = useRoute();
+  const { name } = route.params as ParamsProps;
 
   return (
     <View style={styles.container}>
-      <Text>Screen A</Text>
+      <Text>{name}</Text>
 
       <Button
         title="Go to Screen A"
